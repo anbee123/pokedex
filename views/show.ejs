@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head.ejs')%>
+    <style>
+        body {
+            background-color: rgb(204, 172, 234);
+        }
+        img {
+            border-radius: 30px;
+            
+        }
+        a {
+            color: rgb(214, 100, 209);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><%= onePokemon.name%></h1>
+        <img src="<%= onePokemon.img%>" alt="<%= onePokemon.name%>"><br>
+        Type:
+        <ul>
+            <% for(let i=0; i < onePokemon.type.length; i++) { %>
+                <li>
+                    <%= onePokemon.type[i]%>
+                </li>
+            <% } %>
+        </ul>
+        Stats: <br>
+        <ul>
+            <li>HP: <%= onePokemon.stats.hp%> </li>
+            <li>Attack: <%= onePokemon.stats.attack%> </li>
+            <li>Defense: <%= onePokemon.stats.defense%> </li>
+            <li>Speed: <%= onePokemon.stats.speed%></li>
+        </ul>
+        <a href="/pokemon">Back</a>
+
+    </div> 
+</body>
+</html>
+
