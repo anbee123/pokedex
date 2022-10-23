@@ -17,22 +17,22 @@
 </head>
 <body>
     <div class="container">
-        <h1><%= onePokemon.name%></h1>
-        <img src="<%= onePokemon.img%>" alt="<%= onePokemon.name%>"><br>
+        <h1><%= data.name%></h1>
+        <img src="<%= data.img%>" alt="<%= data.name%>"><br>
         Type:
         <ul>
-            <% for(let i=0; i < onePokemon.type.length; i++) { %>
+            <% for(let i=0; i < data.type.length; i++) { %>
                 <li>
-                    <%= onePokemon.type[i]%>
+                    <%= data.type[i]%>
                 </li>
             <% } %>
         </ul>
         Stats: <br>
         <ul>
-            <li>HP: <%= onePokemon.stats.hp%> </li>
-            <li>Attack: <%= onePokemon.stats.attack%> </li>
-            <li>Defense: <%= onePokemon.stats.defense%> </li>
-            <li>Speed: <%= onePokemon.stats.speed%></li>
+            <li>HP: <%= data.stats.hp%> </li>
+            <li>Attack: <%= data.stats.attack%> </li>
+            <li>Defense: <%= data.stats.defense%> </li>
+            <li>Speed: <%= data.stats.speed%></li>
         </ul>
         <a href="/pokemon">Back</a>
 
