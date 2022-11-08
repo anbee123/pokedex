@@ -34,10 +34,24 @@ app.put("/pokemon/:id", (req, res) => {
 
 //CREATE//
 app.post("/pokemon", (req, res) => {
-    //console.log(req.body)
-    pokemon.push(req.params.id)
+    let newPokemon ={
+        name: req.body.name,
+        img: req.body.img,
+        type: req.body.type,
+        stats:{
+            hp: req.body.hp,
+            attack: req.body.attack,
+            defense: req.body.defense,
+            speed: req.body.speed,
+
+        }
+    }
+    pokemon.push(newPokemon)
+  
     res.redirect("/pokemon")
 })
+
+
 
 //EDIT//
 app.get("/pokemon/:id/edit", (req, res) => {
