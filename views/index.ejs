@@ -23,7 +23,7 @@
         
         <h1>Pokedex App</h1>
         
-        <% for(let i=0; i < 8; i++) { %>
+        <% for(let i=0; i < allPokemon.length; i++) { %>
             <a href="/pokemon/<%=i%>"><img src="<%= allPokemon[i].img%>" ></a>
             <a href="/pokemon/<%=i%>/edit">Edit</a>
             <form action="/pokemon/<%=[i]%>?_method=DELETE" method="POST">

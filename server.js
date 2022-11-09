@@ -28,12 +28,14 @@ app.delete("/pokemon/:id", (req, res) => {
 
 //UPDATE//
 app.put("/pokemon/:id", (req, res) => {
-    pokemon[req.params.id] = req.params.id
+    console.log(req.params.id, req.body)
+    pokemon[req.params.id] = req.body
     res.redirect("/pokemon")
 })
 
 //CREATE//
 app.post("/pokemon", (req, res) => {
+    console.log(req.body)
     let newPokemon ={
         name: req.body.name,
         img: req.body.img,
@@ -46,6 +48,7 @@ app.post("/pokemon", (req, res) => {
 
         }
     }
+    console.log(pokemon)
     pokemon.push(newPokemon)
   
     res.redirect("/pokemon")
