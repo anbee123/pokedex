@@ -27,11 +27,11 @@ app.delete("/pokemon/:id", (req, res) => {
 })
 
 //UPDATE//
-app.put("/pokemon/:id", (req, res) => {
-    console.log(req.params.id, req.body)
-    pokemon[req.params.id] = req.body
-    res.redirect("/pokemon")
-})
+app.put('/pokemon/:id', (req, res) => {
+    pokemon.find(req.params.id, req.body, {new:true}, (err, updateModel)=>
+    {
+      res.redirect('/pokemon');});
+  });
 
 //CREATE//
 app.post("/pokemon", (req, res) => {
