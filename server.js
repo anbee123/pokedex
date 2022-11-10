@@ -27,12 +27,23 @@ app.delete("/pokemon/:id", (req, res) => {
 })
 
 //UPDATE//
-app.put('/pokemon/:id', (req, res) => {
-    pokemon.find(req.params.id, req.body, {new:true}, (err, updateModel)=>
-    {
-      res.redirect('/pokemon');});
-  });
-
+app.put('/pokemon/:indexOfPokemon', (req, res) => {
+console.log(req.body)
+        let editPokemon ={
+            name: req.body.name,
+            img: req.body.img,
+            type: req.body.type.split(','),
+            stats:{
+                hp: req.body.hp,
+                attack: req.body.attack,
+                defense: req.body.defense,
+                speed: req.body.speed,
+    
+            }
+    }
+    pokemon[req.params.indexOfPokemon] = editPokemon
+    res.redirect('/pokemon')
+})
 //CREATE//
 app.post("/pokemon", (req, res) => {
     console.log(req.body)
